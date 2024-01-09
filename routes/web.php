@@ -23,14 +23,17 @@ Route::get('/', function () {
 Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 
 //display car (by id)
-Route::get('/cars/{id}', [CarController::class, 'show'])->name('cars.show');
+//Route::get('/cars/{id}', [CarController::class, 'show'])->name('cars.show');
 
 //display all manufacturers
 Route::get('/manufacturers', [ManufacturerController::class, 'index'])->name('manufacturers.index');
 
-Route::get('/cars/craete', function () {
-    return view('./cars.craete');
-});
+//add new car form
+Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
+
+//store new car
+Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
+
 
 Route::get('/cars/edit/{id}', function () {
     return view('./cars.edit');
