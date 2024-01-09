@@ -21,3 +21,19 @@ Route::get('/', function () {
 Route::get('/cars', function () {
     return view('./cars.index');
 });
+
+Route::get('/manufacturers', function () {
+    return view('./manufacturers.index');
+});
+
+Route::get('/cars/craete', function () {
+    return view('./cars.craete');
+});
+
+Route::get('/cars/edit/{id}', function () {
+    return view('./cars.edit');
+});
+
+Route::get('/cars/show/{id}', function () {
+    return view('./cars.show');
+});
